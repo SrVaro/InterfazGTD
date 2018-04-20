@@ -32,7 +32,7 @@ public class ControladorVentanaPrincipal {
 
         JPanel panel = new JPanel();
         panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-        panel.setBounds(10, y, 414, 50);
+        panel.setBounds(10, y, 800, 50);
         panel.setLayout(null);
         {
             JLabel lblNombreTarea = new JLabel(nombreTarea);

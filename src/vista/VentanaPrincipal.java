@@ -38,15 +38,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         tabbedPane = new javax.swing.JTabbedPane();
         scrollPanelTareasEntrada = new javax.swing.JScrollPane();
         panelTareasEntrada = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         etiquetaUsuario = new javax.swing.JLabel();
         logoGTD = new javax.swing.JLabel();
         etiquetaAjustes = new javax.swing.JLabel();
         botonProcesar = new javax.swing.JButton();
-        jButtonAbrirAnadirTarea = new javax.swing.JButton();
+        jButtonAbrirAgregarTarea = new javax.swing.JButton();
         jTextFieldNombreTareaEntrada = new javax.swing.JTextField();
         jLabelNombreTareaEntrada = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel1NuevaTarea = new javax.swing.JLabel();
 
         jDialogAnyadirTarea.setSize(new java.awt.Dimension(400, 213));
 
@@ -119,16 +123,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         scrollPanelTareasEntrada.setViewportView(panelTareasEntrada);
 
         tabbedPane.addTab("Tareas entrada", scrollPanelTareasEntrada);
+        tabbedPane.addTab("Tareas inmediatas", jScrollPane1);
+        tabbedPane.addTab("Tareas agenda", jScrollPane2);
+        tabbedPane.addTab("Tareas delegadas", jScrollPane3);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 867, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        tabbedPane.addTab("tab5", jPanel1);
+
+        menu.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), null));
 
         etiquetaUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaUsuario.setText("Usuario");
+        etiquetaUsuario.setText("User");
 
         logoGTD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoLogin.png"))); // NOI18N
 
         etiquetaAjustes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         etiquetaAjustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaAjustes.setText("Ajustes");
+        etiquetaAjustes.setText("Options");
         etiquetaAjustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 etiquetaAjustesMouseClicked(evt);
@@ -157,45 +179,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(logoGTD, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(etiquetaUsuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
                 .addComponent(etiquetaAjustes)
                 .addGap(25, 25, 25))
         );
 
-        botonProcesar.setText("Procesar");
+        botonProcesar.setText("Process");
         botonProcesar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProcesarActionPerformed(evt);
             }
         });
 
-        jButtonAbrirAnadirTarea.setText("Añadir");
-        jButtonAbrirAnadirTarea.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAbrirAgregarTarea.setText("Add");
+        jButtonAbrirAgregarTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAbrirAnadirTareaActionPerformed(evt);
+                jButtonAbrirAgregarTareaActionPerformed(evt);
             }
         });
 
-        jLabelNombreTareaEntrada.setText("Nombre de la tarea: ");
+        jLabelNombreTareaEntrada.setText("Task name:");
 
-        jLabel1.setText("AÑADIR TAREAS DE ENTRADA:");
+        jLabel1NuevaTarea.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        jLabel1NuevaTarea.setText("NEW TASK:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonAbrirAnadirTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAbrirAgregarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(jLabelNombreTareaEntrada)
                         .addGap(37, 37, 37)
-                        .addComponent(jTextFieldNombreTareaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldNombreTareaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1NuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 872, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -213,11 +236,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jLabel1NuevaTarea)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAbrirAnadirTarea)
+                    .addComponent(jButtonAbrirAgregarTarea)
                     .addComponent(jTextFieldNombreTareaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNombreTareaEntrada))
                 .addGap(23, 23, 23))
@@ -235,10 +258,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_botonProcesarActionPerformed
 
-    private void jButtonAbrirAnadirTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirAnadirTareaActionPerformed
+    private void jButtonAbrirAgregarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirAgregarTareaActionPerformed
         panelTareasEntrada.add(controlador.crearPanelTareaEntrada(jTextFieldNombreTareaEntrada.getText()));
         panelTareasEntrada.updateUI();
-    }//GEN-LAST:event_jButtonAbrirAnadirTareaActionPerformed
+    }//GEN-LAST:event_jButtonAbrirAgregarTareaActionPerformed
 
     private void jTextFieldAnyadirTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnyadirTareaActionPerformed
         // TODO add your handling code here:
@@ -267,11 +290,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaAjustes;
     private javax.swing.JLabel etiquetaUsuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonAbrirAnadirTarea;
+    private javax.swing.JButton jButtonAbrirAgregarTarea;
     private javax.swing.JDialog jDialogAnyadirTarea;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel1NuevaTarea;
     private javax.swing.JLabel jLabelAnyadirTarea;
     private javax.swing.JLabel jLabelNombreTareaEntrada;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextFieldAnyadirTarea;
     private javax.swing.JTextField jTextFieldNombreTareaEntrada;
     private javax.swing.JLabel logoGTD;
